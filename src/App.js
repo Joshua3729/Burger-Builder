@@ -8,24 +8,6 @@ class App extends Component {
   render() {
     var axios = require("axios").default;
 
-    var options = {
-      method: "GET",
-      url: "https://movie-database-imdb-alternative.p.rapidapi.com/",
-      params: { s: "Avengers Endgame", page: "1", r: "json" },
-      headers: {
-        "x-rapidapi-key": "70d0806322msh63bb072e8817e9dp10021cjsnedc7e006d950",
-        "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
-      },
-    };
-
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
     return (
       <div>
         <Layout>
