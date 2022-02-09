@@ -6,8 +6,6 @@ import { Route } from "react-router-dom";
 import Orders from "./container/Orders/Orders";
 class App extends Component {
   render() {
-    var axios = require("axios").default;
-
     return (
       <div>
         <Layout>

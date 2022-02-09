@@ -89,19 +89,8 @@ class BurgerBuilder extends Component {
     });
   };
   continuePurchase = () => {
-    //   const queryParams = [];
-    //   for (let i in this.props.ingredients) {
-    //     queryParams.push(
-    //       encodeURIComponent(i) +
-    //         "=" +
-    //         encodeURIComponent(this.props.ingredients[i])
-    //     );
-    //   }
-    //   queryParams.push("price=" + this.props.totalPrice.toFixed(2));
-    //   const queryString = queryParams.join("&");
     this.props.history.push({
       pathname: "/checkout",
-      // search: "?" + queryString,
     });
   };
   render() {
@@ -123,7 +112,6 @@ class BurgerBuilder extends Component {
         <Aux>
           <Burger ingredients={this.props.ingredients} />
           <BuildControls
-            // addingHandler={this.addingIngredientHandler}
             addingHandler={this.props.onAddIngredients}
             removingHandler={this.props.onRemoveIngredients}
             disabledInfo={disabledInfo}
