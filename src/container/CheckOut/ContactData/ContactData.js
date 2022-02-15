@@ -40,7 +40,6 @@ class ContactData extends Component {
       })
       .catch((error) => {
         console.log(error);
-        // this.setState({ loading: false, purchased: false });
       });
   };
   render() {
