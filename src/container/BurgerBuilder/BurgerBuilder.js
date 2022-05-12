@@ -9,6 +9,7 @@ import LoadingSpinner from "../../components/UI/LoadingSpinner/LoadingSpinner";
 import WithErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import * as actionTypes from "../../store/actions/actionTypes";
 import { connect } from "react-redux";
+import * as BurgerBuilderActions from "../../store/actions/index";
 
 const INGREDIENT_PRICES = {
   salad: 0.5,
@@ -159,10 +160,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onAddIngredients: (type) =>
-      dispatch({ type: actionTypes.ADD_INGREDIENT, value: type }),
-    onRemoveIngredients: (type) => {
-      dispatch({ type: actionTypes.REMOVE_INGREDIENT, value: type });
+    onAddIngredients: (name) =>
+      dispatch(BurgerBuilderActions.addingredient(name)),
+    onRemoveIngredients: (name) => {
+      dispatch(BurgerBuilderActions.removeIngredient(name));
     },
   };
 };
