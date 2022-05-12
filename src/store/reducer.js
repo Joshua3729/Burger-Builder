@@ -17,6 +17,16 @@ const initialState = {
   purchasable: false,
 };
 
+const purchasableHandler = (ingredients) => {
+  return Object.keys(ingredients)
+    .map((key) => {
+      return ingredients[key];
+    })
+    .reduce((acc, el) => {
+      return acc + el;
+    }, 0);
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_INGREDIENT:
@@ -26,14 +36,7 @@ const reducer = (state = initialState, action) => {
       };
       updatedIngredients[action.value] = newCount;
       const newPrice = state.totalPrice + INGREDIENT_PRICES[action.value];
-      const sum = Object.keys(updatedIngredients)
-        .map((key) => {
-          return action.ingredients[key];
-        })
-        .reduce((acc, el) => {
-          return acc + el;
-        }, 0);
-
+      let sum = purchasableHandler(updatedIngredients);
       return {
         ...state,
         ingredients: updatedIngredients,
@@ -49,9 +52,12 @@ const reducer = (state = initialState, action) => {
         };
         updatedIngredients[action.value] = newCount;
         const newPrice = state.totalPrice - INGREDIENT_PRICES[action.value];
+        let sum = purchasableHandler(updatedIngredients);
+
         return {
           ingredients: updatedIngredients,
           totalPrice: newPrice,
+          purchasable: sum > 0,
         };
       }
 
