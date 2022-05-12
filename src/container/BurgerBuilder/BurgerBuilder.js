@@ -116,7 +116,7 @@ class BurgerBuilder extends Component {
             removingHandler={this.props.onRemoveIngredients}
             disabledInfo={disabledInfo}
             price={this.props.totalPrice}
-            purchasable={this.props.onPurchasable}
+            purchasable={this.props.purchasable}
             purchased={this.purchaseHandler}
           />
         </Aux>
@@ -153,6 +153,7 @@ const mapStateToProps = (state) => {
   return {
     ingredients: state.ingredients,
     totalPrice: state.totalPrice,
+    purchasable: state.purchasable,
   };
 };
 

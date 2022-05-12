@@ -26,10 +26,19 @@ const reducer = (state = initialState, action) => {
       };
       updatedIngredients[action.value] = newCount;
       const newPrice = state.totalPrice + INGREDIENT_PRICES[action.value];
+      const sum = Object.keys(updatedIngredients)
+        .map((key) => {
+          return action.ingredients[key];
+        })
+        .reduce((acc, el) => {
+          return acc + el;
+        }, 0);
+
       return {
         ...state,
         ingredients: updatedIngredients,
         totalPrice: newPrice,
+        purchasable: sum > 0,
       };
 
     case actionTypes.REMOVE_INGREDIENT:
