@@ -6,3 +6,10 @@ export const addingredient = (name) => {
     value: name,
   };
 };
+
+export const removeIngredient = (name) => {
+  return {
+    type: actionTypes.REMOVE_INGREDIENT,
+    value: name,
+  };
+};
