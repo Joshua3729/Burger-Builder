@@ -54,18 +54,6 @@ const reducer = (state = initialState, action) => {
           totalPrice: newPrice,
         };
       }
-    case actionTypes.PURCHASABLE:
-      const sum = Object.keys(action.ingredients)
-        .map((key) => {
-          return action.ingredients[key];
-        })
-        .reduce((acc, el) => {
-          return acc + el;
-        }, 0);
-      return {
-        ...state,
-        purchasable: sum > 0,
-      };
 
     default:
       return state;
