@@ -161,8 +161,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onAddIngredients: (type) =>
       dispatch({ type: actionTypes.ADD_INGREDIENT, value: type }),
-    onPurchasable: (ingredients) =>
-      dispatch({ type: actionTypes.PURCHASABLE, ingredients: ingredients }),
     onRemoveIngredients: (type) => {
       dispatch({ type: actionTypes.REMOVE_INGREDIENT, value: type });
     },
