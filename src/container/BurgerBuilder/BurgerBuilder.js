@@ -7,7 +7,7 @@ import OrderSummary from "../../components/OrderSummary/OrderSummary";
 import axios from "../../axios-orders";
 import LoadingSpinner from "../../components/UI/LoadingSpinner/LoadingSpinner";
 import WithErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
-import * as actionTypes from "../../store/actions/actiontypes";
+import * as actionTypes from "../../store/actions/actionTypes";
 import { connect } from "react-redux";
 
 const INGREDIENT_PRICES = {
