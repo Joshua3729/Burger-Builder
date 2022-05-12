@@ -6,10 +6,10 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import registerServiceWorker from "./registerServiceWorker";
 import { BrowserRouter } from "react-router-dom";
-import reducer from "./store/reducer/reducer";
+import burgerBuilderReducer from "./store/reducer/burgerBuilder";
 
 const store = createStore(
-  reducer,
+  burgerBuilderReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 const app = (
