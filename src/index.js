@@ -7,6 +7,7 @@ import { createStore } from "redux";
 import registerServiceWorker from "./registerServiceWorker";
 import { BrowserRouter } from "react-router-dom";
 import burgerBuilderReducer from "./store/reducer/burgerBuilder";
+import thunk from "redux-thunk";
 
 const store = createStore(
   burgerBuilderReducer,
